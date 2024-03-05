@@ -1,5 +1,8 @@
 *,
 html {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
   box-sizing: border-box;
   margin: 0, auto;
 }
@@ -23,6 +26,11 @@ nav {
   background-color: #fafaf9;
   margin-left: -24px;
   margin-top: -8px;
+}
+
+.paragraph {
+  font-size: 0.68em;
+  font-weight: 500;
 }
 
 .navbar {
@@ -87,7 +95,7 @@ li {
 
 a {
   color: #000000;
-  font-size: 0.8em;
+  font-size: 0.68em;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -118,7 +126,7 @@ main {
   background-color: aquamarine;
 }
 
-aside {
+.content-aside {
   margin: 8px;
   flex-grow: 4;
   background-color: burlywood;
@@ -134,6 +142,52 @@ aside {
 }
 
 footer {
-  background-color: tomato;
-  height: 10vh;
+  padding: 24px;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-content {
+  flex-grow: 1;
+}
+
+.email {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.email::placeholder {
+  font-size: 0.8em;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.footer-aside {
+  flex-grow: 12;
+  margin: auto;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+}
+.footer-aside img {
+  margin: left -24px;
+  align-items: center;
+}
+
+.contact {
+  margin-top: 48px;
+}
+
+.contact p {
+  font-size: 0.68em;
+  font-weight: 500;
+}
+
+.contact-email a {
+  font-size: 1em;
+}
+
+.copyright {
+  margin-bottom: -16px;
+  margin-top: 48px;
 }

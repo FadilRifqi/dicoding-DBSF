@@ -1,44 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style/index.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/style/index.css" />
     <title>Dicoding</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav>
-            <div class="navbar">
-              <ul class="nav-content">
-                <div class="primary-nav-content">
-                  <a class="logo">BERNEKUHL.COM</a>
-                  <li><a href="">Shop</a></li>
-                  <li><a href="">Collections</a></li>
-                  <li><a href="">Inventory</a></li>
-                  <li><a href="">Information</a></li>
-                </div>
-                <div class="secondary-nav-content">
-                  <input class= "search" type="search" placeholder="Search" >
-                  <a class="cart">Cart(0)</a>
-                </div>
-              </ul>
+      <nav>
+        <div class="navbar">
+          <ul class="nav-content">
+            <div class="primary-nav-content">
+              <a class="logo"><img src="./assets/image/logo.svg" alt="Z" /></a>
+              <li><a href="">Shop</a></li>
+              <li><a href="">Collections</a></li>
+              <li><a href="">Inventory</a></li>
+              <li><a href="">Information</a></li>
             </div>
-        </nav>
+            <div class="secondary-nav-content">
+              <input class="search" type="search" placeholder="Search" />
+              <a class="cart">Cart(0)</a>
+            </div>
+          </ul>
+        </div>
+      </nav>
     </header>
     <main>
-        <div class="content">
-            <article>
-                <h1>WEB DESIGN</h1>
-            </article>
-        </div>
-        <aside>
-          <div class="img-container">
-            <img class="img" src="" alt="">
-          </div>
-            <p>tes</p>
-        </aside>
+      <div class="container">
+        <div class="content"></div>
+        <aside class="main-aside"></aside>
+      </div>
+      <div class="container">
+        <div class="carousel-container"></div>
+      </div>
     </main>
-    <footer>ini footer</footer>
-</body>
+    <footer>
+      <div class="footer-content">
+        <div class="newsletter">
+          <p class="paragraph">Newsletter</p>
+          <hr />
+          <input class="email" type="email" placeholder="Email Address" />
+          <hr />
+          <a href="">Sign Up</a>
+        </div>
+        <div class="contact">
+          <p>Contact</p>
+          <div class="contact-email">
+            <p class="paragraph">
+              Email us : <br />
+              <span><a href="">contact@bernerkuhl.com</a></span>
+            </p>
+          </div>
+        </div>
+        <div class="office-hour">
+          <p class="paragraph">
+            Office Hours : <br />
+            0900-1700 UTC
+          </p>
+        </div>
+        <div class="instagram">
+          <a class="paragraph" href="">Instagram</a>
+        </div>
+        <div class="copyright">
+          <p class="paragraph">&copy; 2024 Berner Kühl. All rights reserved.</p>
+        </div>
+      </div>
+      <aside class="footer-aside">
+        <img src="./assets/image/footer-aside.svg" alt="" />
+      </aside>
+    </footer>
+  </body>
 </html>
