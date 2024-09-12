@@ -17,7 +17,7 @@ To get started with this project, follow these steps:
 
 Open your terminal and run the following command to clone the repository:
 
-```bash
+```git
 git clone https://github.com/FadilRifqi/dicoding-DBSF.git
 ```
 

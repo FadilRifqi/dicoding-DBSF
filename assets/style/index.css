@@ -44,9 +44,6 @@ main {
   width: 100%;
 }
 
-.navbar {
-}
-
 .logo {
   margin-top: 4px;
   margin-right: 48px;
@@ -99,9 +96,6 @@ ul {
 .cart {
   cursor: pointer;
   margin-top: 2px;
-}
-
-li {
 }
 
 a {
