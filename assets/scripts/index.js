@@ -1,37 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
   const carousel = document.querySelector(".carousel-inner");
+  const items = Array.from(carousel.children);
+  items.forEach((item) => {
+    const clone = item.cloneNode(true);
+    carousel.appendChild(clone);
+  });
+
   let currentPosition = 0;
-  const slideWidth = 100; // Adjust this value based on your carousel item width
-  const totalSlides = 4; // Adjust this value based on the number of slides in your carousel
+  const slideWidth = 100 / items.length; // Adjust this value based on your carousel item width
+  const totalSlides = items.length * 2; // Adjust this value based on the number of slides in your carousel
   const slideInterval = 5000; // Interval between each slide in milliseconds
 
   function slideTo(position) {
     const newPosition = position * -slideWidth;
-    const delta = newPosition - currentPosition;
-    const step = delta / 100; // Change the number of steps to control the sliding speed
-    let currentStep = 0;
+    currentPosition = newPosition;
+    carousel.style.transition = "transform 0.5s ease";
+    carousel.style.transform = `translateX(${currentPosition}%)`;
 
-    const slideAnimation = setInterval(function () {
-      currentPosition += step;
-      carousel.style.transform = `translateX(${currentPosition}%)`;
-
-      currentStep++;
-      if (currentStep >= 100) {
-        clearInterval(slideAnimation);
-        currentPosition = newPosition;
-        carousel.style.transform = `translateX(${currentPosition}%)`;
-      }
-    }, 10); // Adjust this interval for smoother or faster sliding
+    // Handle the seamless transition
+    if (position >= items.length) {
+      setTimeout(() => {
+        carousel.style.transition = "none";
+        carousel.style.transform = `translateX(0%)`;
+        currentPosition = 0;
+      }, 500); // Match this duration with the transition duration
+    }
   }
 
   // Function to slide to the next item
   function slideNext() {
     const nextPosition = currentPosition / -slideWidth + 1;
-    if (nextPosition < totalSlides) {
-      slideTo(nextPosition);
-    } else {
-      slideTo(0); // Reset to the first slide if it's the last one
-    }
+    slideTo(nextPosition);
   }
 
   // Automatically slide to the next item at regular intervals

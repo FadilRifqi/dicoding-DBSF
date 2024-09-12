@@ -121,14 +121,12 @@ a:hover {
   background-color: bisque;
 }
 
-main {
-  background-color: blueviolet;
+.wrapper {
   display: flex;
   flex-direction: row;
   width: 100%;
   padding: 8px;
   margin-top: 40px;
-  height: 100vh;
 }
 
 .content {
@@ -150,51 +148,43 @@ main {
 }
 
 .carousel {
-  z-index: 100;
   height: 100%;
   width: 100%;
   margin-left: -8px;
   position: relative;
   overflow: hidden;
 }
-
-.carousel-inner {
-  z-index: 100;
-  display: flex;
-  height: 100%;
-  width: 100%;
-  gap: 100px;
-  flex: 2 2 2;
-  margin-left: -8px;
-  transition: transform 0.5s ease; /* Smooth transition for sliding */
-}
-
 .carousel-inner img {
   width: 100%;
 }
 
-.carousel-item-1 img {
-  object-fit: fill;
-  height: 650px;
-  width: 550px;
+.carousel-outer {
+  overflow: hidden;
+  width: 100%; /* Adjust based on your needs */
+  position: relative;
 }
 
-.carousel-item-2 img {
-  object-fit: fill;
-  height: 650px;
-  width: 400px;
+.carousel-inner {
+  display: flex;
+  animation: scroll-horizontal 20s linear infinite; /* Adjust duration as needed */
 }
 
-.carousel-item-3 img {
-  object-fit: fill;
-  height: 650px;
-  width: 550px;
+.carousel-item {
+  flex: 0 0 auto; /* Prevent items from shrinking */
 }
 
-.carousel-item-4 img {
+.carousel-item img {
   object-fit: fill;
-  height: 650px;
-  width: 480px;
+  height: 650px; /* Adjust based on your needs */
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .prev,
@@ -271,4 +261,111 @@ footer {
 .copyright {
   margin-bottom: -16px;
   margin-top: 48px;
+}
+
+.second-container {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
+
+.main-section {
+  padding-left: 16px;
+  width: 50%;
+}
+
+.secondary-section {
+  display: flex;
+  flex-direction: row;
+  padding-right: 16px;
+  width: 50%;
+  gap: 0;
+  justify-content: flex-end;
+}
+
+.section-image {
+  width: 100%;
+  height: 100%;
+}
+
+.image-display {
+  margin-left: 2px;
+  margin-top: -4px;
+}
+
+.main-text-wrapper {
+  width: 50%;
+}
+
+.main-text {
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.middle-container {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  text-align: center;
+}
+
+.text {
+  font-size: 20px; /* Adjust as needed */
+}
+
+.another-containerT_T {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  width: 100vw; /* Ensure the container takes the full width */
+  overflow-x: auto; /* Enable horizontal scrolling if necessary */
+}
+
+.another-image-wrapper {
+  flex: 0 0 auto; /* Prevent flex items from shrinking or growing */
+  box-sizing: border-box;
+  padding: 0; /* Remove padding around the images */
+}
+
+.another-image-wrapper img {
+  width: calc(100vw / 8); /* Set width to one-eighth of the viewport width */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+}
+
+.first-container {
+  margin-top: 2rem;
+  margin-bottom: 8rem;
+  display: flex;
+  flex-direction: row;
+  height: 120vh;
+  width: 100vw;
+}
+
+.first-image-wrapper {
+  position: relative;
+  width: 50%;
+}
+
+.first-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.first-image-text {
+  position: absolute;
+  font-size: 0.8em;
+  font-weight: bold;
+  bottom: 5%; /* Adjust this value to position the text slightly above the bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Center the text horizontally */
+  background-color: white; /* Optional: Add a background color for better readability */
+  color: black; /* Text color */
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
